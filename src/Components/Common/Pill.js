@@ -1,6 +1,5 @@
 import "./styles.css";
 function Pill({ item = "", color = "", backgroundColor = "" }) {
-  console.log("item", item, color, backgroundColor);
   return (
     <div
       style={{

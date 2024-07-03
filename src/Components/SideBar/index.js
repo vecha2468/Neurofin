@@ -5,7 +5,6 @@ function SideBar({
   setViewData = () => {},
   setActiveComponent = () => {},
 }) {
-  console.log(activeComponent);
   return (
     <div className="side_bar">
       <div className="side_bar__title">BOLTEARTH</div>
