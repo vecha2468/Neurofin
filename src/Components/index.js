@@ -10,6 +10,7 @@ function Components() {
     sideBarData = [],
     chargerColumnsData = [],
     chargerData = [],
+    viewDataTabs=[],
   } = useData();
   const [viewData, setViewData] = useState({});
   const [activeComponent, setActiveComponent] = useState("Chargers");
@@ -35,7 +36,7 @@ function Components() {
           />
           {Object.keys(viewData).length !== 0 ? (
             <div className="view_component">
-              <ViewBattery item={viewData} setViewData={setViewData} />
+              <ViewBattery item={viewData} setViewData={setViewData} viewDataTabs={viewDataTabs} />
             </div>
           ) : null}
         </div>

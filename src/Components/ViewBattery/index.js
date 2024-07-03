@@ -2,15 +2,8 @@ import { useState } from "react";
 import "./viewBattery.css";
 import Empty from "../Common/Empty";
 import Information from "./Information";
-function ViewBattery({ item = {}, setViewData = () => {} }) {
+function ViewBattery({ item = {}, setViewData = () => {},viewDataTabs=[] }) {
   const [activeTab, setActiveTab] = useState("information");
-  const tabs = [
-    { label: "Information", value: "information" },
-    { label: "Bookings", value: "bookings" },
-    { label: "Stats", value: "stats" },
-    { label: "Map View", value: "mapview" },
-    { label: "suppport Logs", value: "supportLogs" },
-  ];
   const icons = ["i", "i", "i", "i", "i"];
   const { chargerUid = "CU-0001" } = item || {};
   return (
@@ -26,7 +19,7 @@ function ViewBattery({ item = {}, setViewData = () => {} }) {
         </div>
       </div>
       <div className="tabs">
-        {tabs.map((tab) => {
+        {viewDataTabs.map((tab) => {
           return (
             <div
               style={{ fontSize: "15px" }}

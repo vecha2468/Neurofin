@@ -12,6 +12,13 @@ const useData = () => {
     "Reports",
     "Admin",
   ];
+  const viewDataTabs = [
+    { label: "Information", value: "information" },
+    { label: "Bookings", value: "bookings" },
+    { label: "Stats", value: "stats" },
+    { label: "Map View", value: "mapview" },
+    { label: "suppport Logs", value: "supportLogs" },
+  ];
   const pillDataColours = {
     Active: {
       color: "#008000",
@@ -160,7 +167,7 @@ const useData = () => {
     { header: "ENERGY DISPENSE", accessor: "energyDispense" },
   ];
 
-  return { sideBarData, chargerColumnsData, chargerData };
+  return { sideBarData, chargerColumnsData, chargerData,viewDataTabs };
 };
 
 export default useData;
