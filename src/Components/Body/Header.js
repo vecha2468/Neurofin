@@ -65,6 +65,8 @@ function Header({
               onClick={() => {
                 setActiveTab(tab.value);
                 setViewData({});
+                setFilters((prev)=> ({...prev,sort:false,filtered:false}))
+                setSearchValue("")
               }}
               key={tab.value}
             >
@@ -89,6 +91,7 @@ function Header({
           <input 
           placeholder="Search..."
           onChange={(event)=>{setSearchValue(event.target.value)}}
+          value={searchValue}
            />
         </div>
       </div>
