@@ -10,7 +10,7 @@
   background-color: #515151;
   display: flex;
   color: white;
-  width: 70%;
+  width: 68%;
   height: 80vh;
 }
 
@@ -23,6 +23,7 @@
   border-radius: 8px; /* Rounded corners */ /* Background color of the card */
   overflow-x: auto; /* Horizontal scroll for overflow */
   margin: 25px 40px;
+  scrollbar-width: none;
 }
 .body_header {
   display: flex;

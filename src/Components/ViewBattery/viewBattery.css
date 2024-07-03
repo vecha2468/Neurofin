@@ -7,6 +7,7 @@
 }
 .viewBattery__topbar {
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
   background-color: #010b13;
   justify-content: space-between;

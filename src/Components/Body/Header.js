@@ -4,12 +4,14 @@ function Header({
   activeTab = "chargers",
   setActiveTab = () => {},
   setViewData = () => {},
+  setSearchValue=()=>{}
 }) {
   const icons = ["i", "i", "i"];
   const tabs = [
     { label: "Chargers", value: "chargers" },
     { label: "Bookings", value: "bookings" },
   ];
+
   return (
     <div className="body_header">
       <div className="tabs">
@@ -39,7 +41,10 @@ function Header({
         </div>
         <div className="header__select"> Charger UID </div>
         <div className="header__input">
-          <input placeholder="Search..." />
+          <input 
+          placeholder="Search..."
+          onChange={(event)=>{setSearchValue(event.target.value)}}
+           />
         </div>
       </div>
     </div>

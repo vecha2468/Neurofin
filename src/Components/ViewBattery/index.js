@@ -15,7 +15,9 @@ function ViewBattery({ item = {}, setViewData = () => {},viewDataTabs=[] }) {
           {icons.map((icon) => {
             return <div className="icon">{icon}</div>;
           })}{" "}
-          <div onClick={() => setViewData({})}>{"X"}</div>
+          <div  style={{cursor:'pointer'}}
+          className="icon"
+          onClick={() => setViewData({})}>{"X"}</div>
         </div>
       </div>
       <div className="tabs">

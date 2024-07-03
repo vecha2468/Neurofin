@@ -14,6 +14,8 @@ function Body({
     setViewData(row);
   };
   const [activeTab, setActiveTab] = useState("chargers");
+  const [searchValue,setSearchValue]=useState("")
+  const FilteredData=chargerData.filter((item)=>item?.chargerUid.includes(searchValue))
   return (
     <div
       className={
@@ -28,12 +30,12 @@ function Body({
             activeTab={activeTab}
             setActiveTab={setActiveTab}
             setViewData={setViewData}
+            setSearchValue={setSearchValue}
           />
-          {/* <div className="table_container"> */}
           {activeTab === "chargers" ? (
             <Table
               columns={chargerColumnsData}
-              data={chargerData}
+              data={FilteredData}
               onRowClick={onRowClick}
             />
           ) : (
