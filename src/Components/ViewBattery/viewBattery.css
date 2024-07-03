@@ -1,0 +1,31 @@
+.viewBattery {
+  background-color: rgba(0, 0, 0, 0.894);
+  color: white;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+.viewBattery__topbar {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: #010b13;
+  justify-content: space-between;
+  padding: 15px 35px;
+}
+.information__title {
+  background-color: rgb(84, 84, 84);
+  padding: 10px 15px;
+  margin: 20px 0px;
+}
+.information__info {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+}
+.information__data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px 10px 5px;
+}

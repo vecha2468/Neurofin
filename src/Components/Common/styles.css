@@ -1,0 +1,43 @@
+/* styles.css */
+
+.custom-table {
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 15px;
+  min-width: 130px;
+  color: #ffffff;
+}
+
+.custom-table th {
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+thead tr {
+  background-color: rgba(0, 0, 0, 0.376);
+  display: flex;
+  align-items: center;
+}
+tbody tr {
+  display: flex;
+  align-items: center;
+}
+.pill {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.empty {
+  font-size: large;
+  width: 100%;
+  margin: 10%;
+}
