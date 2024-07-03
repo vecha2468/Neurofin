@@ -1,10 +1,19 @@
 import { useState } from "react";
+import CloseIcon from '@mui/icons-material/Close'
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
+import AlignHorizontalLeftTwoToneIcon from '@mui/icons-material/AlignHorizontalLeftTwoTone';
+
 import "./viewBattery.css";
 import Empty from "../Common/Empty";
 import Information from "./Information";
 function ViewBattery({ item = {}, setViewData = () => {},viewDataTabs=[] }) {
   const [activeTab, setActiveTab] = useState("information");
-  const icons = ["i", "i", "i", "i", "i"];
+  const icons = [
+    {Component:VisibilityIcon },
+    {Component:EmojiFlagsIcon},
+    {Component:AlignHorizontalLeftTwoToneIcon} ,
+    {Component:CloseIcon,action:()=>setViewData({})}];
   const { chargerUid = "CU-0001" } = item || {};
   return (
     <div className="viewBattery">
@@ -12,12 +21,13 @@ function ViewBattery({ item = {}, setViewData = () => {},viewDataTabs=[] }) {
         <div className="topbar__label"> {chargerUid}</div>
         <div className="topbar__icon">
           {" "}
-          {icons.map((icon) => {
-            return <div className="icon">{icon}</div>;
+          {icons.map((Icon,index) => {
+            const {Component,action=()=>{}}=Icon||{};
+            return (<div 
+              style={{cursor:"pointer"}}
+              onClick={()=>{action()}}
+            key={index}><Component /></div>);
           })}{" "}
-          <div  style={{cursor:'pointer'}}
-          className="icon"
-          onClick={() => setViewData({})}>{"X"}</div>
         </div>
       </div>
       <div className="tabs">
@@ -38,8 +48,8 @@ function ViewBattery({ item = {}, setViewData = () => {},viewDataTabs=[] }) {
       </div>
       {activeTab === "information" ? (
         <div>
-          <Information title={"Charger info"} item={item} />
-          <Information title={"Owner info"} item={item} />
+          <Information title={"Charger Info"} item={item} />
+          <Information title={"Owner Info"} item={item} />
         </div>
       ) : (
         <Empty />

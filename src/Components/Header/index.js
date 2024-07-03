@@ -1,6 +1,10 @@
 import "./header.css";
+import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import CodeSharpIcon from '@mui/icons-material/CodeSharp';
+import AppsSharpIcon from '@mui/icons-material/AppsSharp';
 function Header({ activeComponent = {} }) {
-  const icons = ["i", "i", "i", "i", "i"];
+  const icons = [AppsSharpIcon , CodeSharpIcon,  AccountCircleTwoToneIcon, NotificationsNoneTwoToneIcon];
   return (
     <div className="header">
       <div className="topbar">
@@ -9,8 +13,8 @@ function Header({ activeComponent = {} }) {
         </div>
         <div className="topbar__icon">
           {" "}
-          {icons.map((icon) => {
-            return <div className="icon">{icon}</div>;
+          {icons.map((Icon) => {
+            return <div style={{cursor:"pointer"}} ><Icon/></div>;
           })}{" "}
         </div>
       </div>

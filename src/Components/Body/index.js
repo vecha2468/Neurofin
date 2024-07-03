@@ -1,21 +1,24 @@
 import "./body.css";
+import useData from "../../Data/useData";
 import Table from "../Common/Table";
 import Header from "./Header";
 import Empty from "../Common/Empty";
 import { useState } from "react";
 function Body({
-  chargerColumnsData = [],
   activeComponent = "chargers",
-  chargerData = [],
   setViewData = () => {},
   viewData = {},
 }) {
   const onRowClick = (row) => {
     setViewData(row);
   };
+  const {
+    chargerColumnsData = [],
+    chargerData = [],
+    filteredData=[],
+    setFilteredData=()=>{},
+  } = useData();
   const [activeTab, setActiveTab] = useState("chargers");
-  const [searchValue,setSearchValue]=useState("")
-  const FilteredData=chargerData.filter((item)=>item?.chargerUid.includes(searchValue))
   return (
     <div
       className={
@@ -30,12 +33,13 @@ function Body({
             activeTab={activeTab}
             setActiveTab={setActiveTab}
             setViewData={setViewData}
-            setSearchValue={setSearchValue}
+            setFilteredData={setFilteredData}
+            chargerData={chargerData}
           />
           {activeTab === "chargers" ? (
             <Table
               columns={chargerColumnsData}
-              data={FilteredData}
+              data={filteredData}
               onRowClick={onRowClick}
             />
           ) : (

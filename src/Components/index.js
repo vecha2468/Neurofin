@@ -1,15 +1,12 @@
 import SideBar from "./SideBar";
 import Header from "./Header";
 import Body from "./Body";
-import useData from "../Data/data";
+import useData from "../Data/useData";
 import "./component.css";
 import ViewBattery from "./ViewBattery";
 import { useState } from "react";
 function Components() {
   const {
-    sideBarData = [],
-    chargerColumnsData = [],
-    chargerData = [],
     viewDataTabs=[],
   } = useData();
   const [viewData, setViewData] = useState({});
@@ -18,7 +15,6 @@ function Components() {
     <div className="Component">
       <div className="component__sidebar">
         <SideBar
-          sideBarData={sideBarData}
           activeComponent={activeComponent}
           setActiveComponent={setActiveComponent}
           setViewData={setViewData}
@@ -28,8 +24,6 @@ function Components() {
         <Header activeComponent={activeComponent} />
         <div className="active_body_component">
           <Body
-            chargerColumnsData={chargerColumnsData}
-            chargerData={chargerData}
             activeComponent={activeComponent}
             setViewData={setViewData}
             viewData={viewData}
